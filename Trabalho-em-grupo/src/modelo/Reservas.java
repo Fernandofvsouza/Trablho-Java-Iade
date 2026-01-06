@@ -185,7 +185,7 @@ public class Reservas {
     }
 
     /**
-     * editar reserva: pode mudar nº hóspedes e/ou datas reve a capacidade dos quartos
+     * editar reserva: pode mudar nº hóspedes e/ou datas rever a capacidade dos quartos
      */
     public static boolean editarReserva(int idReserva, Integer novoNumeroHospedes, String novaDataInicioStr,
             String novaDataFimStr) {
@@ -335,8 +335,7 @@ public class Reservas {
     }
 
     /**
-     * Conflito se intervalos [a,b] e [c,d] intersectam.
-     * Ignora reserva com idReserva==idIgnorar (use -1 para não ignorar nenhuma).
+     * Ignora reserva com idReserva==idIgnorar 
      */
     private static boolean temConflitoAtivoNoQuarto(int idQuarto, int idIgnorar, LocalDate di, LocalDate df) {
         for (int i = 0; i < contadorReservas; i++) {
