@@ -7,5 +7,7 @@ public class Main {
         Quarto.criarQuartosIniciais();
         Quarto.listarTodosOsQuartos();
         Quarto.listarQuartosDisponiveis();
+        Quarto.listarQuartosOcupados();
+        Quarto.listarQuartoEspecifico(2);
     }
 }

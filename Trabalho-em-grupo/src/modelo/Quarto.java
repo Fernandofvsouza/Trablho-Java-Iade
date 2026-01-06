@@ -25,12 +25,14 @@ public class Quarto {
     private static Quarto[] quartos = new Quarto[10];
     private static int contadorQuartos = 0;
 
+    //Metodo construtor
     public Quarto(int idQuarto, int numeroQuarto, int capacidade, boolean estaOcupado) {
         this.idQuarto = idQuarto;
         this.numeroQuarto = numeroQuarto;
         this.capacidade = capacidade;
         this.estaOcupado = estaOcupado;
 
+        //Adiciona o quarto ao array ao ser criado
         if (contadorQuartos < quartos.length) {
             quartos[contadorQuartos] = this;
             contadorQuartos++;
@@ -40,7 +42,7 @@ public class Quarto {
         
     }
     
-
+    //Método de criação de quartos iniciais
     public static void criarQuartosIniciais(){
         Quarto quartoSingle1 = new Quarto(1, 101, 1, false);  // Quarto 101, capacidade 1
         Quarto quartoSingle2 = new Quarto(2, 102, 1, false);   // Quarto 102, capacidade 1
@@ -54,19 +56,25 @@ public class Quarto {
         Quarto quartoExclusivo = new Quarto(10, 205, 6, false); // Quarto 205, capacidade 6
     }
     
+    //Métodos de listagem dos quartos
     public static void listarTodosOsQuartos(){
+        // Verifica se há quartos cadastrados
       if (contadorQuartos == 0) {
           System.out.println("Nenhum quarto cadastrado.");
           return;
-      }else{
+      }
+      // Lista todos os quartos cadastrados atraves de um loop de repetição for
+      else{
         System.out.println("Lista de todos os quartos:");
         for (int i = 0; i < contadorQuartos; i++) {
+            // cria uma variável temporária para armazenar o quarto atual
             Quarto quarto = quartos[i];
             System.out.println("ID: " + quarto.idQuarto + ", Número: " + quarto.numeroQuarto + ", Capacidade: " + quarto.capacidade + ", Ocupado: " + (quarto.estaOcupado ? "Sim" : "Não"));
         }
       }
     }
 
+    //Método para listar quartos disponíveis
     public static void listarQuartosDisponiveis(){
         System.out.println("Lista de quartos disponíveis: ");
         for(int i = 0; i < contadorQuartos; i++){
@@ -77,7 +85,46 @@ public class Quarto {
         }
     }
 
-    
-   
+    //Método para listar quartos ocupados, incluindo verificação se há quartos ocupados
+    //Falta adicionar dados de ocupação do quarto, como nome do hóspede e datas de check-in e check-out
+    public static void listarQuartosOcupados(){
+        System.out.println("Lista de quartos ocupados: ");
+        // Contador para verificar se há quartos ocupados
+        int quartosOcupados = 0;
+        for(int i = 0; i < contadorQuartos; i++){
+            Quarto quarto = quartos[i];
+            if(quarto.estaOcupado){
+                System.out.println("ID: " + quarto.idQuarto + ", Número: " + quarto.numeroQuarto + ", Capacidade: " + quarto.capacidade);
+                quartosOcupados++;
+            }
+            
+        }
+        // Se não houver quartos ocupados, exibe a seguinte mensagem
+        if(quartosOcupados == 0){
+            System.out.println("Nenhum quarto está ocupado no momento.");
+        }
+        
+    }
+
+    //Método para listar um quarto específico
+    //Falta adicionar todas as reservas do quarto
+    public static void listarQuartoEspecifico(int idQuarto) {
+        System.out.println(" BUSCA POR QUARTO (ID: " + idQuarto + ")");
+        
+        for (int i = 0; i < contadorQuartos; i++) {
+            Quarto quarto = quartos[i];
+            if (quarto.idQuarto == idQuarto) {
+                System.out.println("Quarto encontrado:");
+                System.out.println("ID: " + quarto.idQuarto + 
+                                 ", Número: " + quarto.numeroQuarto + 
+                                 ", Capacidade: " + quarto.capacidade + 
+                                 ", Status: " + (quarto.estaOcupado ? "Ocupado" : "Disponível"));
+                return; 
+            }
+        }
+        
+        
+        System.out.println("Quarto com ID " + idQuarto + " não foi encontrado.");
+    }
     
 }
