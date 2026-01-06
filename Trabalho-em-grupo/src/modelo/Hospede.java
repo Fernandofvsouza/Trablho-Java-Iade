@@ -19,8 +19,11 @@ public class Hospede {
     String documentoHospede;
     private static int contadorId = 1;
 
+    private static Hospede[] hospedes = new Hospede[26];
+    private static int contadorHospedes = 0;
+
     //metodo construtor
-    public void Hospede(int idHospede, String nomeHospede, String documentoHospede){
+    public Hospede(String nomeHospede, String documentoHospede){
         this.idHospede = contadorId++;
         this.nomeHospede = nomeHospede;
         this.documentoHospede = documentoHospede;
@@ -35,8 +38,6 @@ public class Hospede {
     }
 
     //métodos de listagem de hóspedes
-    private static Hospede[] hospedes = new Hospede[26];
-    private static int contadorHospedes = 0;
     public static void listarHospedes(){
        if (contadorHospedes == 0){
         System.out.println("Nenhum hóspede cadastrado.");
@@ -49,17 +50,12 @@ public class Hospede {
             }
        }
     }
-    //Metodo para procurar hóspede por documento
-    public static void procurarHospede(String documento){
-        for (int i = 0; i < contadorHospedes; i++){
-            Hospede hospede = hospedes[i];
-            if (hospede.documentoHospede.equals(documento)){
-                System.out.println("Hóspede encontrado: ID: " + hospede.idHospede + ", Nome: " + hospede.nomeHospede + ", Documento: " + hospede.documentoHospede);
-                return;
-            }
-        }
-        System.out.println("Hóspede com o documento " + documento + " não encontrado.");
-    
-    }
 
     }
+
+<<<<<<< HEAD
+    }
+=======
+    
+    
+>>>>>>> 8b64ac91b8dcb91ff2dbbef8f1038db153fbc04e

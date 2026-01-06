@@ -1,5 +1,6 @@
 package modelo;
 
+
 /*
 Requisitos da class quarto:
 Atributos:
