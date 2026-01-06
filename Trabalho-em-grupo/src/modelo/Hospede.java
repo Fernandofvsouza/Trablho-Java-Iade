@@ -53,9 +53,4 @@ public class Hospede {
 
     }
 
-<<<<<<< HEAD
     }
-=======
-    
-    
->>>>>>> 8b64ac91b8dcb91ff2dbbef8f1038db153fbc04e
