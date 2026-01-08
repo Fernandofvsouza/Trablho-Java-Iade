@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.lang.reflect.Method;
 import java.time.LocalDate;

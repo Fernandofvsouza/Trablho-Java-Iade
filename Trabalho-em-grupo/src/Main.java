@@ -1,4 +1,4 @@
-import modelo.Quarto;
+import model.Quarto;
 
 
 public class Main {
